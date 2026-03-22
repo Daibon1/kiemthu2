@@ -1,0 +1,50 @@
+extends ../../layouts/default.pug
+include ../../mixins/alert.pug
+block main
+ block main
+    +alert-success(3000)
+    +alert-error(3000)
+    // Header
+    header.admin-header.d-flex.justify-content-between.align-items-center.mb-3
+    h4.mb-0 Chi tiết công việc
+    .card.mb-4
+    .card-body
+        .mb-3
+            if(job.title)
+                span Tiêu đề công việc : #{job.title}
+        .mb-3
+            if(job.description)
+                span Mô tả công việc : #{job.description}
+        .mb-3
+            if(job.location)
+                span Địa điểm làm việc : #{job.location}
+        .mb-3
+            if(job.experience)
+                span Kinh nghiệm yêu cầu : #{job.experience}
+        .mb-3
+            if(job.type)
+                span Thời gian làm việc : #{job.type}
+        .mb-3
+            if(job.salaryMin)
+                span Mức lương tối thiểu (VNĐ) : #{job.salaryMin}
+        .mb-3
+            if(job.salaryMax)
+                span Mức lương tối đa (VNĐ) : #{job.salaryMax}
+        .mb-3
+            if(job.position)
+                span Vị trí : #{job.position}
+        .mb-3
+           span Trạng thái : #{job.status} 
+           if(job.status=="active")
+                .btn.badge.bg-success Hoạt động
+           else if(job.status=="inactive")
+                .btn.badge.bg-danger Ngừng hoạt động
+        .mb-3
+           span Thumbnail : 
+           if(job.thumbnail)
+                img(src=job.thumbnail alt="" id="img-preview" )
+           else
+                img(src="/admin/images/no-image.png" alt="No Image" style="width: 80px; height: 80px; object-fit: cover;")
+        .mb-9
+            a.btn.btn-outline-primary.btn-sm(href=`/job/edit/${job.id}`) Chỉnh sửa
+            a.btn.btn-outline-secondary.btn-sm.text-end(href=`/job/`) Quay lại danh sách

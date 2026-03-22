@@ -1,0 +1,24 @@
+mixin form-change-multi()
+    form(
+        action=`/${prefixAdmin}/job/change-multi?_method=PATCH`
+        method="POST"
+        form-change-multi
+      )
+        .row.g-2.align-items-center
+          .col-md-4
+            select.form-select(name="type")
+              option(value="" selected disabled) -- Chọn hành động --
+              option(value="active") Hoạt động
+              option(value="inactive") Ngừng hoạt động
+              option(value="delete-all") Xóa
+              option(value="change-position") Thay đổi vị trí
+          .col-md-1
+            input(type="text" name="ids" value="" class="form-control d-none" placeholder="id1, id2, id3,...")
+          .col-md-2
+            button.btn.btn-primary.w-100(type="submit") Áp dụng
+          .col-md-5.text-end
+            a(href=`/${prefixAdmin}/job/create` 
+              class="btn btn-primary btn-sm" 
+              id="create-job"
+            ) + Thêm job
+            //- button(class="btn btn-primary btn-sm ")+ Thêm job

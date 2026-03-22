@@ -1,0 +1,15 @@
+mixin filter-search(keyword, filterLocation)
+    form().row.g-2.mb-3#form-search
+      .col-md-3
+        select.form-select(name="location")
+          each item in filterLocation
+            option(value=item.name selected=item.selected ? true : false) #{item.name?item.name:"--Địa Điểm--"}
+      .col-md-4
+        input.form-control(
+          type="text"
+          name="keyword"
+          placeholder="Tìm theo tên công việc..."
+          value=keyword
+        )   
+      .col-md-2.d-grid
+        button.btn.btn-primary(type="submit") Lọc

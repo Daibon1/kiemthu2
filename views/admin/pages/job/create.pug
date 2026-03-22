@@ -1,0 +1,78 @@
+extends ../../layouts/default.pug
+include ../../mixins/alert.pug
+block main 
+    main.main
+        +alert-success(3000)
+        +alert-error(3000)
+        // Header
+        header.admin-header.d-flex.justify-content-between.align-items-center.mb-3
+        h4.mb-0 Tạo công việc
+        .card.mb-4
+        .card-body
+            form(action=`/${prefixAdmin}/job/create` method="POST" id="form-create-job" enctype="multipart/form-data")
+                .mb-3
+                    label.form-label Tiêu đề công việc
+                    input.form-control(
+                        type="text"
+                        name="title"
+                        required
+                    )
+                .mb-3
+                    label.form-label Mô tả công việc
+                    textarea.form-control(
+                        name="description" 
+                        rows="5" 
+                    )
+                .mb-3
+                    label.form-label Địa điểm làm việc
+                    input.form-control(
+                        type="text" 
+                        name="location"
+                    )
+                .mb-3
+                    label.form-label Kinh nghiệm yêu cầu
+                    input.form-control(
+                        type="text" 
+                        name="experience"
+                    )
+                .mb-3
+                    label.form-label Thời gian làm việc
+                    .flex.align-items-center.gap-3
+                        label.form-check-label
+                            input.form-check-input(type="radio" name="type" value="Full-time" checked)
+                            | Fulltime
+                        label.form-check-label
+                            input.form-check-input(type="radio" name="type" value="Part-time")
+                            | Parttime
+                .mb-3
+                    label.form-label Mức lương tối thiểu (VNĐ)
+                    input.form-control(type="number" name="salaryMin" min="0")
+                .mb-3
+                    label.form-label Mức lương tối đa (VNĐ)
+                    input.form-control(type="number" name="salaryMax" min="0" )
+                .mb-3
+                    label.form-label Vị trí
+                    input.form-control(type="number" name="position" min="0" placeholder="Tự động tăng")
+                .mb-3
+                    label.form-label Thumbnail (Ảnh công việc)
+                    div(id="preview-img")
+                        input.form-control-file(
+                            type="file"
+                            name="thumbnail"
+                            accept="image/*"
+                            id="file-input"
+                        )
+                        img(src="", alt="" id="img-preview" )
+
+                .mb-3
+                    label.form-label Trạng thái
+                    .flex.align-items-center.gap-3
+                        label.form-check-label
+                            input.form-check-input(type="radio" name="status" value="active" checked)
+                            | Hoạt động
+                        label.form-check-label
+                            input.form-check-input(type="radio" name="status" value="Part-time")
+                            | Dừng hoạt động
+                button.btn.btn-primary(type="submit") Tạo mới
+
+    script(src="/admin/js/job.js") 

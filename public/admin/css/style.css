@@ -1,0 +1,202 @@
+body {
+  margin: 0;
+  background: #f6f8fb;
+  font-family: Inter, Arial, sans-serif;
+}
+
+/* Layout */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: white;
+  padding: 20px;
+  border-right: 1px solid #eee;
+}
+
+.logo {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #555;
+  margin-bottom: 5px;
+  transition: .15s;
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  background: #eaf1ff;
+  color: #2563eb;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 25px;
+}
+
+/* Header */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.admin-user {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Cards */
+.stat-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+  transition: .2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+
+.stat-card h2 {
+  font-weight: 700;
+  color: #2563eb;
+}
+
+/* Table */
+.table-card {
+  background: white;
+  border-radius: 14px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+}
+/* Table Card */
+.table-card {
+  background: white;
+  border-radius: 14px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+}
+
+/* Scroll Table */
+.table-scroll {
+  max-height: 420px;
+  overflow-y: auto;
+  border-radius: 10px;
+}
+
+/* Sticky header */
+thead.sticky-top {
+  background: white;
+  z-index: 2;
+}
+
+/* Hover row */
+.table tbody tr:hover {
+  background: #f8faff;
+}
+
+/* Status badge custom */
+.badge {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 20px;
+}
+body {
+  background-color: #f5f6fa;
+  font-family: Arial, sans-serif;
+}
+
+/* Card */
+.card {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Ảnh job */
+.job-image {
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Title */
+.card-title a {
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+.card-title a:hover {
+  text-decoration: underline;
+}
+/* Badge links in job table */
+a.badge {
+  text-decoration: none !important;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 6px 16px;
+  transition: background 0.2s;
+}
+a.badge.bg-success:hover {
+  background: #198754;
+  color: #fff;
+}
+a.badge.bg-danger:hover {
+  background: #dc3545;
+  color: #fff;
+}
+/* Alert */
+[show-alert]{
+  position:fixed;
+  top:5px;
+  right:15px;
+  z-index:9999;
+}
+[show-alert].alert-hiden{
+  animation-name: alert-hiden;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+@keyframes alert-hiden {
+  from {
+    right: 15px;
+  }
+  to {
+    right: -100%;
+    display: none;
+  }
+}
+[show-alert] [close-alert]{
+  background-color: #fff;
+  display: inline-block;
+  width:24px;
+  height:24px;
+  line-height: 24px;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* img preview
+ */
+
+#img-preview{
+    display:block;
+    width: 400px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 2px solid #0000;
+ }

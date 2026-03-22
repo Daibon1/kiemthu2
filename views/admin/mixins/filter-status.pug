@@ -1,0 +1,8 @@
+mixin filter-status(filterStatus)
+  .filter-status
+    each item in filterStatus
+      .btn(
+        type="button"
+        class=(item.class )
+        button-status=item.status
+      ) #{item.name}
