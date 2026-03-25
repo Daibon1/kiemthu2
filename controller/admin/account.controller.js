@@ -11,7 +11,7 @@ module.exports.index = async (req, res) => {
         // pagination
         const countAccounts = await Account.countDocuments(find);
         let objectPagination = paginationHelper({
-            limitItem: 4,
+            limitItem: 2,
             skipItem: 0,
             page: 1
         }, req.query, countAccounts);

@@ -26,6 +26,10 @@ module.exports.createPost=(req,res,next)=>{
         return;
     }
     if (req.body.title.length==0){
+        // res.status(301).json({
+        //     success: false,
+        //     message: "Tiêu đề công việc không được để trống!"
+        // });
         req.flash('error', 'Tiêu đề công việc không được để trống!');
         res.redirect(req.get("Referrer") || "/admin/job/create");
         return;

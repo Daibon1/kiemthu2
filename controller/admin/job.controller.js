@@ -249,6 +249,6 @@ module.exports.detail = async (req, res) => {
         })
     } catch (error) {
         console.error(error);
-        res.redirect(`${systemConfig.prefixAdmin}/job`);
+        res.redirect(res.get("Referrer") || "/admin/job");
     }
 }

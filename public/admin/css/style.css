@@ -13,7 +13,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-  width: 240px;
+  width: 200px;
   background: white;
   padding: 20px;
   border-right: 1px solid #eee;
@@ -26,7 +26,7 @@ body {
 
 .sidebar nav a {
   display: block;
-  padding: 10px 12px;
+  padding: 10px;
   border-radius: 8px;
   text-decoration: none;
   color: #555;
@@ -43,7 +43,8 @@ body {
 /* Main */
 .main {
   flex: 1;
-  padding: 25px;
+  padding-top: 20px;
+  padding-left: 5px;
 }
 
 /* Header */
