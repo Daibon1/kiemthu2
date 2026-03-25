@@ -30,14 +30,3 @@ if (buttonDelete.length > 0) {
     })
 }
 // end delete
-// preview
-const preview = document.querySelector("#preview-img");
-if (preview) {
-    const inputFile = preview.querySelector("#file-input");
-    const imgPreview = preview.querySelector("#img-preview");
-    inputFile.addEventListener("change",(e)=>{
-        const src = URL.createObjectURL(e.target.files[0]);
-        imgPreview.src=src;
-    })
-}
-// end preview

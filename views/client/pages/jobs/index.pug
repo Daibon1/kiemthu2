@@ -1,8 +1,9 @@
 extends ../../layouts/default.pug
-
+include ../../mixins/alert.pug
 block main
+  //- +alert-success(3000)
+  +alert-error(3000)
   h2.mb-4 Danh sách công việc
-
   // Form tìm kiếm
   form.row.g-2.mb-4(method="GET", action="/jobs")
     .col-md-5

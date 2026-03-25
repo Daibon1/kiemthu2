@@ -1,7 +1,6 @@
 extends ../../layouts/default.pug
 include ../../mixins/alert.pug
 block main
- block main
     +alert-success(3000)
     +alert-error(3000)
     // Header
@@ -34,7 +33,7 @@ block main
             if(job.position)
                 span Vị trí : #{job.position}
         .mb-3
-           span Trạng thái : #{job.status} 
+           span Trạng thái :
            if(job.status=="active")
                 .btn.badge.bg-success Hoạt động
            else if(job.status=="inactive")

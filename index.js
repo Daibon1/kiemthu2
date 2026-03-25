@@ -9,7 +9,7 @@ const app = express();
 const port = process.env.PORT;
 const route = require("./router/client/index.route");
 const routeAdmin = require("./router/admin/index.route");
-
+const routeApi=require("./api/admin/index.route");
 //flash
 app.use(cookieParser('djgwdgjwudjjd'));
 app.use(session({
@@ -30,6 +30,7 @@ app.use(methodOverride('_method'));
 route(app);
 app.locals.prefixAdmin = 'admin';
 routeAdmin(app);
+routeApi(app);
 const database = require("./config/database");
 database.connect();
 //Dùng pug

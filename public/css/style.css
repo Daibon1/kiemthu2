@@ -24,7 +24,7 @@ body {
 .card-title a:hover {
   text-decoration: underline;
 }
-/* Alert */
+/* alert */
 [show-alert]{
   position:fixed;
   top:5px;

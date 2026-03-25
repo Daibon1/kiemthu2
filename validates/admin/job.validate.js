@@ -1,24 +1,27 @@
+const checkNumber=require("../../helpers/checkNumber.js");
+const isNumber=checkNumber.isNumber;
 module.exports.createPost=(req,res,next)=>{
-    if (isNaN(req.body.salaryMin)) {
+    if (!isNumber(req.body.salaryMin)) {
         req.body.salaryMin = 0;
         req.flash('error', 'Mức lương tối thiểu phải là số!');
         res.redirect(req.get("Referrer") || "/admin/job/create");
         return;
     }
-    if (isNaN(req.body.salaryMax)) {
+    if (!isNumber(req.body.salaryMax)) {
         req.body.salaryMax = 0;
         req.flash('error', 'Mức lương tối đa phải là số!');
         res.redirect(req.get("Referrer") || "/admin/job/create");
+        return;
     }
-    if (req.body.salaryMin < 0) {
+    if (parseInt(req.body.salaryMin) < 0) {
         req.body.salaryMin = 0;
-        req.flash('error', 'Mức lương tối thiểu phải là số nguyên!');
+        req.flash('error', 'Mức lương tối thiểu phải là số dương!');
         res.redirect(req.get("Referrer") || "/admin/job/create");
         return;
     }
-    if (req.body.salaryMax < 0) {
+    if (parseInt(req.body.salaryMax) < 0) {
         req.body.salaryMax = 0;
-        req.flash('error', 'Mức lương tối đa phải là số nguyên!');
+        req.flash('error', 'Mức lương tối đa phải là số dương!');
         res.redirect(req.get("Referrer") || "/admin/job/create");
         return;
     }
@@ -27,7 +30,7 @@ module.exports.createPost=(req,res,next)=>{
         res.redirect(req.get("Referrer") || "/admin/job/create");
         return;
     }
-    if (req.body.salaryMin > req.body.salaryMax) {
+    if (parseInt(req.body.salaryMin) > parseInt(req.body.salaryMax)) {
         req.flash('error', 'Mức lương tối thiểu không được lớn hơn mức lương tối đa!');
         res.redirect(req.get("Referrer") || "/admin/job/create");
         return;

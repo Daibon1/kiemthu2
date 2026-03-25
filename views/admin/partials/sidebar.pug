@@ -1,7 +1,7 @@
 aside.sidebar.shadow-sm
-    h3.logo Admin Panel
+    h3.logo Admin
     nav
         a(href=`/${prefixAdmin}/dashboard`  class=['sidebar-item', currentUrl === `/${prefixAdmin}/dashboard` ? 'active' : ''].join(' ')) Tổng Quan
         a(href=`/${prefixAdmin}/job` class=['sidebar-item', currentUrl === `/${prefixAdmin}/job` ? 'active' : ''].join(' ')) Quản lý việc làm
         a(href="#" class="sidebar-item") Cài đặt
-        a(href="#" class="sidebar-item") Đăng xuất
+        a(href=`/${prefixAdmin}/account`  class=['sidebar-item', currentUrl === `/${prefixAdmin}/account` ? 'active' : ''].join(' ')) Danh sách tài khoản

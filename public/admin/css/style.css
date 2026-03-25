@@ -2,6 +2,7 @@ body {
   margin: 0;
   background: #f6f8fb;
   font-family: Inter, Arial, sans-serif;
+  padding-top: 15px
 }
 
 /* Layout */
@@ -46,17 +47,20 @@ body {
 }
 
 /* Header */
-.admin-header {
+.header {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* .admin-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-}
+} */
 
-.admin-user {
+/* .admin-user {
   color: #666;
   font-size: 14px;
-}
+} */
 
 /* Cards */
 .stat-card {
