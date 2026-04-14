@@ -20,7 +20,8 @@
     "express-session": "^1.19.0",
     "md5": "^2.3.0",
     "method-override": "^3.0.0",
-    "mongoose": "^9.2.3",
+    "mongodb": "^7.1.1",
+    "mongoose": "^9.4.1",
     "mongoose-slug-updater": "^3.3.0",
     "multer": "^2.1.1",
     "pug": "^3.0.3"

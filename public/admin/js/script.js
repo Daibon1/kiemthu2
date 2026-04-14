@@ -30,13 +30,17 @@ if (formSearch) {
         const location = e.target.elements.location.value;
         if (keyword) {
             url.searchParams.set("keyword", keyword);
+            url.searchParams.set("page", 1);
         } else {
             url.searchParams.delete("keyword");
+            url.searchParams.set("page", 1);
         }
         if (location) {
             url.searchParams.set("location", location);
+            url.searchParams.set("page", 1);
         } else {
             url.searchParams.delete("location");
+            url.searchParams.set("page", 1);
         }
         // console.log(url.href);
         window.location.href = url.href;

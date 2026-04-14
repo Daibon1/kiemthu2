@@ -7,6 +7,8 @@ const flash = require('express-flash');
 
 const app = express();
 const port = process.env.PORT;
+let database = require("./config/database");
+database.connect();
 const route = require("./router/client/index.route");
 const routeAdmin = require("./router/admin/index.route");
 const routeApi=require("./api/admin/index.route");
@@ -31,14 +33,12 @@ route(app);
 app.locals.prefixAdmin = 'admin';
 routeAdmin(app);
 routeApi(app);
-const database = require("./config/database");
-database.connect();
 //Dùng pug
 app.set('view engine', 'pug');
-app.set('views', './views');
+app.set('views', `${__dirname}/views`);
 //Dùng file tĩnh
-
-app.use(express.static('public'));
+// console.log(__dirname);
+app.use(express.static(`${__dirname}/public`));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
