@@ -176,9 +176,6 @@ module.exports.create = async (req, res) => {
 module.exports.createPost = async (req, res) => {
     req.body.salaryMin = parseInt(req.body.salaryMin);
     req.body.salaryMax = parseInt(req.body.salaryMax);
-    if (req.file) {
-        req.body.thumbnail = `/uploads/${req.file.filename}`;
-    }
     if (!req.body.position) {
         const countJobs = await Job.countDocuments();
         req.body.position = countJobs + 1;
